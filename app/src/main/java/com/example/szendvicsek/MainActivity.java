@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
                             sb.append("Nincs ilyen olcsó szendvics: ").append(ertek);
                         }
                         Intent kereses = new Intent(MainActivity.this, SearchResultActivity.class);
-                        String szendvics = db.toString();
-                        kereses.putExtra("szendvics", szendvics);
+                        String szendvics = sb.toString();
+                        kereses.putExtra("szendvicsKulcs", szendvics);
                         startActivity(kereses);
                         finish();
                     } catch (NumberFormatException e) {
