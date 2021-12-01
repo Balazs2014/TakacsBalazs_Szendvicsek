@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                     try {
                         Cursor adat = db.kereses(ertek);
                         StringBuilder sb = new StringBuilder();
-                        if (adat.getCount() == 0) {
+                        if (!(adat.getCount() == 0)) {
                             while (adat.moveToNext()) {
                                 sb.append("Név: ").append(adat.getString(1));
                                 sb.append(System.lineSeparator());
@@ -63,6 +63,10 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Számot adjon meg",
                                 Toast.LENGTH_SHORT).show();
                     }
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "A mező kitöltése kötelező",
+                            Toast.LENGTH_SHORT).show();
                 }
             }
         });
