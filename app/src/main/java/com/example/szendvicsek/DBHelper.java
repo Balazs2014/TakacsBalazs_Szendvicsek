@@ -1,5 +1,6 @@
 package com.example.szendvicsek;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -42,5 +43,15 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         return db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + COL_AR + " <= ? ",
                 new String[]{ar});
+    }
+
+    public boolean ujFelvetel(String nev, String leiras, int elkeszites, int ar) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues ujSzendo = new ContentValues();
+        ujSzendo.put(COL_NEV, nev);
+        ujSzendo.put(COL_LEIRAS, leiras);
+        ujSzendo.put(COL_ELKESZITES, elkeszites);
+        ujSzendo.put(COL_AR, ar);
+        return db.insert(TABLE_NAME, null, ujSzendo) != -1;
     }
 }
