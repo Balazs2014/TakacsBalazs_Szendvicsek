@@ -1,9 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".InsertActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/insert_editTxtNev"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Név"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/insert_editTxtLeiras"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Leírás"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/insert_editTxtElkeszites"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Elkészítési idő (perc)"
+        android:inputType="number"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/insert_editTxtAr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ár (Ft)"
+        android:inputType="number"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/insert_btnFelvetel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Felvétel"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/insert_btnVissza"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vissza"
+        android:textSize="25sp" />
+
+</LinearLayout>
